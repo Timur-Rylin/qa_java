@@ -37,6 +37,15 @@ public class LionTest {
         Lion lion = new Lion(felineMock, "Самец");
 
         assertEquals(3, lion.getKittens());
+    }
+
+    @Test
+    public void getKittensVerifiesFelineGetKittensCalled() throws Exception {
+        when(felineMock.getKittens()).thenReturn(3);
+        Lion lion = new Lion(felineMock, "Самец");
+
+        lion.getKittens();
+
         verify(felineMock, times(1)).getKittens();
     }
 
@@ -49,6 +58,15 @@ public class LionTest {
         List<String> actualFood = lion.getFood();
 
         assertEquals(expectedFood, actualFood);
+    }
+
+    @Test
+    public void getFoodVerifiesFelineGetFoodCalled() throws Exception {
+        when(felineMock.getFood("Хищник")).thenReturn(List.of("Мясо"));
+        Lion lion = new Lion(felineMock, "Самец");
+
+        lion.getFood();
+
         verify(felineMock, times(1)).getFood("Хищник");
     }
 }

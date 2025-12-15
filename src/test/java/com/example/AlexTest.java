@@ -47,6 +47,15 @@ public class AlexTest {
         List<String> food = alex.getFood();
 
         assertNotNull(food);
+    }
+
+    @Test
+    public void alexGetFoodVerifiesFelineGetFoodCalled() throws Exception {
+        when(felineMock.getFood("Хищник")).thenReturn(List.of("Мясо"));
+        Alex alex = new Alex(felineMock);
+
+        alex.getFood();
+
         verify(felineMock, times(1)).getFood("Хищник");
     }
 }

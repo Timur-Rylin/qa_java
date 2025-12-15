@@ -10,7 +10,6 @@ public class Alex extends Lion {
 
     @Override
     public int getKittens() {
-
         return 0;
     }
 

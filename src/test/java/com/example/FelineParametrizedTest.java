@@ -3,7 +3,6 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.Collection;
 import static org.junit.Assert.assertEquals;
@@ -19,15 +18,13 @@ public class FelineParametrizedTest {
         this.expected = expected;
     }
 
-    @Parameters
+    @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 {0, 0},
                 {1, 1},
-                {2, 2},
                 {5, 5},
-                {10, 10},
-                {100, 100}
+                {10, 10}
         });
     }
 

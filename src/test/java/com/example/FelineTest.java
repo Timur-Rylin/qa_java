@@ -26,10 +26,8 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensWithCountReturnsCorrectNumber() {
+    public void getKittensWithCountThreeReturnsThree() {
         Feline feline = new Feline();
         assertEquals(3, feline.getKittens(3));
-        assertEquals(0, feline.getKittens(0));
-        assertEquals(10, feline.getKittens(10));
     }
 }
